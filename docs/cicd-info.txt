@@ -1,0 +1,64 @@
+Audit web portal
+code commit-intcde-audit-web-portal-pod-2
+ECR intcde-audit-web-portal-pod-2 (public.ecr.aws/n5h3g5h8/intcde008-audit-web-portal-pod-2)
+Cluster : intcde008-audit-management-portal-pod2
+task-def intcde008-audit-web-portal-pod-2-td
+container audit-web-portal
+service intcde008-audit-web-portal-pod-2-service
+security-group intcde008-audit-pod-2
+load-balancer  	intcde008-audit-pod-2
+target-group 	intcde008-audit-web-portal-tg
+code-pipeline-name audit-web-portal-pipeline-pod2
+code-pipeline project-name audit-web-portal
+application-name audit-web-portal-pod2
+REPOSITORY_URI public.ecr.aws/n5h3g5h8/intcde008-audit-web-portal-pod-2
+AWS_DEFAULT_REGION us-east-2
+CONTAINER_NAME audit-web-portal
+
+new project name audit-web-portal-pipeline-pod2-1
+public.ecr.aws/n5h3g5h8/intcde008-audit-web-portal-pod-2:latest
+
+audit-authentication-pod2
+941516478045.dkr.ecr.us-east-2.amazonaws.com/intcde008-audit-authentication-pod2-ecr
+
+intcde008-audit-authentication-pod2-td
+ intcde008-audit-authentication-pod2-service 
+intcde008-audit-authentication-pod2
+
+
+intcde008-audit-checklist-pod2
+941516478045.dkr.ecr.us-east-2.amazonaws.com/intcde008-audit-checklist-pod2-ecr
+intcde008-audit-checklist-pod2-td
+intcde008-audit-checklist-service
+codebuild-intcde008-audit-checklist-pod2-service-role
+
+
+
+intcde008-audit-benchmark-pod2
+git clone https://git-codecommit.us-east-2.amazonaws.com/v1/repos/intcde008-audit-benchmark-pod2
+intcde008-audit-benchmark-pod2-ecr
+941516478045.dkr.ecr.us-east-2.amazonaws.com/intcde008-audit-benchmark-pod2-ecr
+codebuild-intcde008-audit-benchmark-pod2-1-service-role
+
+
+
+intcde008-audit-severity-pod2
+https://git-codecommit.us-east-2.amazonaws.com/v1/repos/intcde008-audit-severity-pod2
+intcde008-audit-severity-pod2-ecr
+941516478045.dkr.ecr.us-east-2.amazonaws.com/intcde008-audit-severity-pod2-ecr
+codebuild-intcde008-audit-severity-pod2-service-role1
+
+
+
+intcde008-audit-web-portal-pod2-ecr
+
+intcde008-audit-web-portal-pod2-td
+941516478045.dkr.ecr.us-east-2.amazonaws.com/intcde008-audit-web-portal-pod2-ecr
+codebuild-intcde008-audit-web-portal-pod2-service-role
+
+
+intcde009-audit-web-portal-pod2-service  http://18.218.116.172:8090/loginPage#
+intcde009-audit-severity-pod2-service	18.220.232.110
+intcde008-audit-authentication-pod2-service  3.135.196.229
+intcde008-audit-benchmark-pod2-service  18.223.143.38
+intcde008-audit-checklist-service 18.188.241.207

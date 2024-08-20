@@ -1,0 +1,24 @@
+docker container run -p 8090:8090 -d --name=audit-web-portal --network=audit-network audit-web-portal
+docker container run -p 8081:8081 -d --name=audit-checklist --network=audit-network audit-checklist
+docker container run -p 8080:8080 -d --name=audit-severity --network=audit-network audit-severity
+docker container run -p 8082:8082 -d --name=audit-benchmark --network=audit-network audit-benchmark
+docker container run -p 8083:8083 -d --name=audit-authentication --network=audit-network audit-authentication
+
+3. sudo service docker start
+4. Add ec2-user to the docker group 
+sudo usermod -a -G docker ec2-user
+sudo chmod 666 /var/run/docker.sock
+
+ssh -i pod-2-key.pem ec2-user@ec2-18-222-137-64.us-east-2.compute.amazonaws.com
+
+[ec2-user@ip-172-31-31-192 ~]$ docker stop 5e4
+5e4
+[ec2-user@ip-172-31-31-192 ~]$ docker stop 0b5
+0b5
+[ec2-user@ip-172-31-31-192 ~]$ docker stop 14a
+^[[A^[[B^[[A^[[A^[[A14a
+[ec2-user@ip-172-31-31-192 ~]$ docker stop 516
+516
+[ec2-user@ip-172-31-31-192 ~]$ docker stop 470
+470
+[ec2-user@ip-172-31-31-192 ~]$ docker start 5e4
